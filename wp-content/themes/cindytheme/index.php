@@ -9,133 +9,15 @@
         </div>
       </div>
       <div class="row">
-        
-        <div class="col-md-4 col-sm-6 portfolio-item">
-          <a class="portfolio-link" data-toggle="modal" href="#portfolioModal1">
-            <div class="portfolio-hover">
-              <div class="portfolio-hover-content">
-                <i class="fa fa-plus fa-3x"></i>
-              </div>
-            </div>
-            <img class="img-fluid" src="img/portfolio/volstate.png" alt="">
-          </a>
-          <div class="portfolio-caption">
-            <h4>Volunteer State Community College</h4>
-          </div>
-        </div>
-        
-        <div class="col-md-4 col-sm-6 portfolio-item">
-          <a class="portfolio-link" data-toggle="modal" href="#portfolioModal2">
-            <div class="portfolio-hover">
-              <div class="portfolio-hover-content">
-                <i class="fa fa-plus fa-3x"></i>
-              </div>
-            </div>
-            <img class="img-fluid" src="img/portfolio/digisign_thumb.jpg" alt="">
-          </a>
-          <div class="portfolio-caption">
-            <h4>Vol State Digital Signage</h4>
-          </div>
-        </div>
 
-        <div class="col-md-4 col-sm-6 portfolio-item">
-          <a class="portfolio-link" data-toggle="modal" href="#portfolioModal3">
-            <div class="portfolio-hover">
-              <div class="portfolio-hover-content">
-                <i class="fa fa-plus fa-3x"></i>
-              </div>
-            </div>
-            <img class="img-fluid" src="img/portfolio/makethemflip.png" alt="">
-          </a>
-          <div class="portfolio-caption">
-            <h4>Make Them Flip</h4>
-          </div>
-        </div>
+        <?php 
+        if ( have_posts() ) : while ( have_posts() ) : the_post();
+      
+          get_template_part( 'content', get_post_format() );
+    
+        endwhile; endif; 
+        ?>
 
-        <div class="col-md-4 col-sm-6 portfolio-item">
-          <a class="portfolio-link" data-toggle="modal" href="#portfolioModal4">
-            <div class="portfolio-hover">
-              <div class="portfolio-hover-content">
-                <i class="fa fa-plus fa-3x"></i>
-              </div>
-            </div>
-            <img class="img-fluid" src="img/portfolio/hoaglands.png" alt="">
-          </a>
-          <div class="portfolio-caption">
-            <h4>Hoagland's of Greenwich</h4>
-          </div>
-        </div>
-
-        <div class="col-md-4 col-sm-6 portfolio-item">
-          <a class="portfolio-link" data-toggle="modal" href="#portfolioModal8">
-            <div class="portfolio-hover">
-              <div class="portfolio-hover-content">
-                <i class="fa fa-plus fa-3x"></i>
-              </div>
-            </div>
-            <img class="img-fluid" src="img/portfolio/coke.png" alt="">
-          </a>
-          <div class="portfolio-caption">
-            <h4>Coca-Cola Print Shop</h4>
-          </div>
-        </div>
-
-        <div class="col-md-4 col-sm-6 portfolio-item">
-          <a class="portfolio-link" data-toggle="modal" href="#portfolioModal5">
-            <div class="portfolio-hover">
-              <div class="portfolio-hover-content">
-                <i class="fa fa-plus fa-3x"></i>
-              </div>
-            </div>
-            <img class="img-fluid" src="img/portfolio/jewelers3.png" alt="">
-          </a>
-          <div class="portfolio-caption">
-            <h4>Jewelers3</h4>
-          </div>
-        </div>
-
-        <div class="col-md-4 col-sm-6 portfolio-item">
-          <a class="portfolio-link" data-toggle="modal" href="#portfolioModal6">
-            <div class="portfolio-hover">
-              <div class="portfolio-hover-content">
-                <i class="fa fa-plus fa-3x"></i>
-              </div>
-            </div>
-            <img class="img-fluid" src="img/portfolio/tablematters.png" alt="">
-          </a>
-          <div class="portfolio-caption">
-            <h4>Table Matters</h4>
-          </div>
-        </div>
-
-        <div class="col-md-4 col-sm-6 portfolio-item">
-          <a class="portfolio-link" data-toggle="modal" href="#portfolioModal7">
-            <div class="portfolio-hover">
-              <div class="portfolio-hover-content">
-                <i class="fa fa-plus fa-3x"></i>
-              </div>
-            </div>
-            <img class="img-fluid" src="img/portfolio/asahperd.png" alt="">
-          </a>
-          <div class="portfolio-caption">
-            <h4>ASAHPERD</h4>
-          </div>
-        </div>
-
-        <div class="col-md-4 col-sm-6 portfolio-item">
-          <a class="portfolio-link" data-toggle="modal" href="#portfolioModal9">
-            <div class="portfolio-hover">
-              <div class="portfolio-hover-content">
-                <i class="fa fa-plus fa-3x"></i>
-              </div>
-            </div>
-            <img class="img-fluid" src="img/portfolio/hk.png" alt="">
-          </a>
-          <div class="portfolio-caption">
-            <h4>Hannah Kate</h4>
-          </div>
-        </div>
-        
     </div>
   </section>
 
@@ -235,5 +117,43 @@
       </div>
     </div>
   </section>
+
+
+  <!-- Portfolio Modals -->
+  <?php if ( have_posts() ) : while ( have_posts() ) : the_post();?>
+      
+  <div class="portfolio-modal modal fade" id="portfolioModal<?php echo get_the_ID(); ?>" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="close-modal" data-dismiss="modal">
+          <div class="lr">
+            <div class="rl"></div>
+          </div>
+        </div>
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-8 mx-auto">
+              <div class="modal-body">
+                <!-- Project Details Go Here -->
+                <h2 class="text-uppercase"><?php the_title(); ?></h2>
+                 
+                  <?php if ( has_post_thumbnail() ) {
+                    the_post_thumbnail('post-thumbnail', ['class' => 'img-fluid d-block mx-auto'] );
+                  } ?>
+
+                  <?php the_excerpt(); ?>
+
+                 <button class="btn btn-primary" data-dismiss="modal" type="button">
+                  <i class="fa fa-times"></i>
+                  Close Project</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+<?php endwhile; endif; ?>
 
 <?php get_footer(); ?>

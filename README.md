@@ -1,2 +1,2 @@
 # wptheme
-creating a custom WP theme from scratch
+making my portfolio site in WordPress using a custom theme
