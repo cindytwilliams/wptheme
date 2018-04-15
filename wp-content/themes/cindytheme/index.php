@@ -33,11 +33,18 @@
       <div class="row">
 
          <div class="col-lg-12 text-center">
-          <p>I've been building websites and applications for over 20 years, including e-commerce shops, gift registries, reservation and inventory management systems.</p>
 
-          <p>My toolset includes HTML, CSS, Sass, Gulp, Git, Bootstrap, Twig, JavaScript, JQuery, PHP, MySQL, Drupal, WordPress, and lots of coffee.</p>
 
-          <p>I have a bachelor's degree in computer science from <a href="http://uab.edu">The University of Alabama at Birmingham</a>, and currently work as a web developer at <a href="http://volstate.edu">Volunteer State Community College</a>.</p>
+          <?php
+            // query for the about page
+            $your_query = new WP_Query( 'pagename=about' );
+            // "loop" through query (even though it's just one page) 
+            while ( $your_query->have_posts() ) : $your_query->the_post();
+                the_content();
+            endwhile;
+            // reset post data (important!)
+            wp_reset_postdata();
+          ?>
 
         </div>
 
@@ -58,15 +65,20 @@
       
       <div class="row">
 
-         <div class="col-lg-6">
-          <p class="quote">"Very rarely does an employee come into an organization and make a difference from day one. Cindy  has done just that. She brings broad technical skills as well as creativity to the solutions she provides."</p>
-        <p class="quote-name">Frank Spina<br>IT Director at Command Alkon</p>
-        </div>
+        <?php 
+        $args =  array( 
+          'post_type' => 'testimonials',
+          'orderby' => 'menu_order',
+          'order' => 'ASC'
+        );
+         $custom_query = new WP_Query( $args );
+            while ($custom_query->have_posts()) : $custom_query->the_post(); ?>
 
-        <div class="col-lg-6">
-          <div class="quote">"It never ceases to amaze me how Cindy can take a complicated business process and convert it into an incredibly efficient database driven web process. She is spot on in her ability to analyze, quote, and then deliver solutions for our clients. She has always delivered high level results ahead of schedule and below budget."</p>
-        <p class="quote-name">John Lovoy<br>CEO Infomedia</p>
-      </div>
+              <div class="col-lg-6">
+                <?php the_content(); ?>
+              </div>
+
+        <?php endwhile; ?>
       
     </div>
 
@@ -141,7 +153,7 @@
                     the_post_thumbnail('post-thumbnail', ['class' => 'img-fluid d-block mx-auto'] );
                   } ?>
 
-                  <?php the_excerpt(); ?>
+                  <?php the_content(); ?>
 
                  <button class="btn btn-primary" data-dismiss="modal" type="button">
                   <i class="fa fa-times"></i>
