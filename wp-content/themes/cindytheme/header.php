@@ -1,35 +1,66 @@
+
 <!DOCTYPE html>
 <html lang="en">
 
-<head>
-	<meta charset="utf-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<meta name="description" content="">
-	<meta name="author" content="">
+  <head>
 
-	<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
-	<!--[if lt IE 9]>
-      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
-      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-    <![endif]-->
-	<?php wp_head();?>
-</head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
 
-<body>
+    <title>Cindy Williams - web developer</title>
 
-	<div class="blog-masthead">
-		<div class="container">
-			<nav class="blog-nav">
-				<a class="blog-nav-item active" href="/">Home</a>
-				<?php wp_list_pages( '&title_li=' ); ?>
-			</nav>
-		</div>
-	</div>
-	
-	<div class="container">
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-101024652-1"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+    
+      gtag('config', 'UA-101024652-1');
+    </script>
 
-		<div class="blog-header">
-			<h1 class="blog-title"><a href="<?php echo get_bloginfo( 'wpurl' );?>"><?php echo get_bloginfo( 'name' ); ?></a></h1>
-			<p class="lead blog-description"><?php echo get_bloginfo( 'description' ); ?></p>
-		</div>
+    <?php wp_head();?>
+
+  </head>
+
+  <body id="page-top">
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
+      <div class="container">
+        <a class="navbar-brand js-scroll-trigger" href="#page-top">Cindy Williams</a>
+        <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+          Menu
+          <i class="fa fa-bars"></i>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+          <ul class="navbar-nav text-uppercase ml-auto">
+            <li class="nav-item">
+              <a class="nav-link js-scroll-trigger" href="#portfolio">Portfolio</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link js-scroll-trigger" href="#about">About</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link js-scroll-trigger" href="#testimonials">Testimonials</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link js-scroll-trigger" href="#contact">Contact</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Header -->
+    <header class="masthead">
+      <div class="container">
+        <div class="intro-text">
+          <div class="intro-heading text-uppercase">Cindy Williams</div>
+          <div class="intro-lead-in">web developer</div>
+          <a class="btn btn-primary btn-xl text-uppercase js-scroll-trigger" href="#portfolio">View My Work</a>
+        </div>
+      </div>
+    </header>

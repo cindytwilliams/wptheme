@@ -1,0 +1,12 @@
+// Styling for the about section
+#about {
+  background-color: $gray-300;
+    a.btn {
+      color: $white;
+      text-decoration: none;
+    }
+    a {
+      color: $gray-700;
+      text-decoration: underline;
+    }
+}
