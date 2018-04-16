@@ -13,7 +13,7 @@ function cindytheme_scripts() {
 	wp_enqueue_script( 'bootstrap-bundle', get_template_directory_uri() . '/vendor/bootstrap/js/bootstrap.bundle.min.js', null, '', true );
 	wp_enqueue_script( 'jquery-easing', get_template_directory_uri() . '/vendor/jquery-easing/jquery.easing.min.js', null, '', true );
 	wp_enqueue_script( 'bootstrap-validation', get_template_directory_uri() . '/js/jqBootstrapValidation.js', null, '', true );
-	wp_enqueue_script( 'contact-me', get_template_directory_uri() . '/js/contact_me.js', null, '', true );
+	//wp_enqueue_script( 'contact-me', get_template_directory_uri() . '/js/contact_me.js', null, '', true );
 	wp_enqueue_script( 'agency', get_template_directory_uri() . '/js/agency.min.js', null, '', true );
 	
 }
