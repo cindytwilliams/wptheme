@@ -502,3 +502,14 @@ ul.social-buttons li a {
 ul.social-buttons li a:active, ul.social-buttons li a:focus, ul.social-buttons li a:hover {
   background-color: #e9ba17;
 }
+
+
+div.wpcf7-mail-sent-ok {
+  border: none;
+}
+div.wpcf7-validation-errors, div.wpcf7-acceptance-missing {
+  border: none;
+}
+div.wpcf7-response-output {
+  color: white;
+}
