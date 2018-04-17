@@ -57,6 +57,9 @@
         margin: 0;
         @include serif-font;
       }
+      a {
+        color: $gray-900;
+      }
     }
   }
   * {

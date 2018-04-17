@@ -101,9 +101,7 @@ gulp.task('default', ['css', 'js', 'vendor']);
 // Configure the browserSync task
 gulp.task('browserSync', function() {
   browserSync.init({
-    server: {
-      baseDir: "./"
-    }
+    proxy: "http://localhost:8888"
   });
 });
 
@@ -112,4 +110,5 @@ gulp.task('dev', ['css', 'js', 'browserSync'], function() {
   gulp.watch('./scss/*.scss', ['css']);
   gulp.watch('./js/*.js', ['js']);
   gulp.watch('./*.html', browserSync.reload);
+  gulp.watch('./*.php', browserSync.reload);
 });

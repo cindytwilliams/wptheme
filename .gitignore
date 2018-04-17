@@ -22,5 +22,6 @@ wp-content/plugins/*
 wp-content/themes/*
 !wp-content/themes/cindytheme/
 
-wp-content/themes/cindytheme/scss
-/wp-snapshots
+# Ignore these directories
+wp-content/themes/cindytheme/node_modules
+wp-snapshots

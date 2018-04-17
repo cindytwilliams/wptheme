@@ -290,6 +290,10 @@ header.masthead .intro-text .intro-heading {
   font-family: 'Droid Serif', 'Helvetica Neue', Helvetica, Arial, sans-serif;
 }
 
+#portfolio .portfolio-item .portfolio-caption a {
+  color: #212529;
+}
+
 #portfolio * {
   z-index: 2;
 }
@@ -501,15 +505,4 @@ ul.social-buttons li a {
 
 ul.social-buttons li a:active, ul.social-buttons li a:focus, ul.social-buttons li a:hover {
   background-color: #e9ba17;
-}
-
-
-div.wpcf7-mail-sent-ok {
-  border: none;
-}
-div.wpcf7-validation-errors, div.wpcf7-acceptance-missing {
-  border: none;
-}
-div.wpcf7-response-output {
-  color: white;
 }

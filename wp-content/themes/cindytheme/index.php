@@ -132,7 +132,7 @@
                 <h2 class="text-uppercase"><?php the_title(); ?></h2>
                  
                   <?php if ( has_post_thumbnail() ) {
-                    the_post_thumbnail('post-thumbnail', ['class' => 'img-fluid d-block mx-auto'] );
+                    the_post_thumbnail('full', ['class' => 'img-fluid d-block mx-auto'] );
                   } ?>
 
                   <?php the_content(); ?>
