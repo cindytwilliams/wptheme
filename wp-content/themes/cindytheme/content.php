@@ -10,6 +10,6 @@
 		} ?>
   </a>
   <div class="portfolio-caption">
-    <h4><?php the_title(); ?></h4>
+    <h4><a data-toggle="modal" href="#portfolioModal<?php echo get_the_ID(); ?>"><?php the_title(); ?></a></h4>
   </div>
 </div>
