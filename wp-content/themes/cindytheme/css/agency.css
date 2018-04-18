@@ -464,6 +464,11 @@ section#contact :-ms-input-placeholder {
   font-family: 'Montserrat', 'Helvetica Neue', Helvetica, Arial, sans-serif;
 }
 
+section#contact div.wpcf7-mail-sent-ok, section#contact div.wpcf7-validation-errors, section#contact div.wpcf7-acceptance-missing {
+  border: none;
+  color: #fff;
+}
+
 footer {
   padding: 25px 0;
   text-align: center;

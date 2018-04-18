@@ -43,4 +43,8 @@ section#contact {
     color: $gray-400;
     @include heading-font;
   }
+  div.wpcf7-mail-sent-ok, div.wpcf7-validation-errors, div.wpcf7-acceptance-missing {
+    border: none;
+    color: $white;
+  }
 }
