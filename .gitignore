@@ -26,3 +26,4 @@ wp-content/themes/*
 wp-content/themes/cindytheme/node_modules
 wp-snapshots
 wp-content/themes/cindytheme/vendor
+wp-content/themes/cindytheme/package-lock.json
