@@ -25,3 +25,4 @@ wp-content/themes/*
 # Ignore these directories
 wp-content/themes/cindytheme/node_modules
 wp-snapshots
+wp-content/themes/cindytheme/vendor
